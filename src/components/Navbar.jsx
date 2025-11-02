@@ -29,25 +29,30 @@ const Navbar = () => {
 
   return (
     <nav className={cn(
-        "fixed w-full z-40 transition-all duration-300", 
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-md" : "py-5 "
+        "fixed inset-0 w-full z-40 transition-all duration-300", 
+        isScrolled ? "py-5 shadow-md" : "py-5 "
   )}>
 
     <div className='container flex items-center justify-between'>
+
+         {/* Logo oder name */}
         <a  href="#hero" className='text-xl font-bold text-primary flex items-center'>
             <span className='relative z-10'>
-                <span className='text-glow text-foreground'>Vicrutech</span>Portfolio
+                <span className='text-glow text-foreground'>Vicrutech</span> Portfolio
             </span>
-
         </a>
 
         {/* Navigation Links */}
         <div className='hidden md:flex space-x-8'>
             {navItems.map((item,key) => (
                 <a key={key} href={item.href} 
-                className='text-foreground/80 hover:text-primary transition-colors duration-300'> {item.name} </a>
+                className='text-foreground/80 hover:text-primary transition-colors duration-300'> 
+                {item.name} 
+                </a>
             ))}
         </div>
+
+         {/* Theme Toggle */}
         <ThemeToggle></ThemeToggle>  
 
         {/* Navigation Links Mobile*/}
@@ -57,21 +62,18 @@ const Navbar = () => {
             className='md:hidden pt-2 pr-0  text-foreground z-50'
             arial-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         > {isMenuOpen ? <X size ={24} /> : <Menu size={24} />}
-
         </button>
 
-
-  
-
-        <div className={cn("fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
+        <div className={
+            cn("fixed inset-0 w-full bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
             "transition-all duration-300 md:hidden",
 
-            isMenuOpen 
+            (isMenuOpen) 
             ? "opacity-100 pointer-events-auto" 
             : "opacity-0 pointer-events-none"
-            )}>
-
-            <div className='flex flex-col space-x-8 text-xl items-center justify-center space-y-6'>
+            )
+            }>
+            <div className='flex flex-col text-xl items-center justify-center space-y-6'>
                 {navItems.map((item,key) => (
                     <a 
                     key={key} 
@@ -79,7 +81,7 @@ const Navbar = () => {
                     className='text-foreground/80 hover:text-primary transition-colors duration-300'
                     onClick={() => setIsMenuOpen(false)}
                     >
-                        {item.name}
+                     {" "}   {item.name}
                      </a>
                 ))}
             </div>
