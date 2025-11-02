@@ -48,18 +48,18 @@ const Navbar = () => {
                 className='text-foreground/80 hover:text-primary transition-colors duration-300'> {item.name} </a>
             ))}
         </div>
+        <ThemeToggle></ThemeToggle>  
 
         {/* Navigation Links Mobile*/}
 
         <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
-            className='md:hidden pt-2 pr-10  text-foreground z-50'
+            className='md:hidden pt-2 pr-0  text-foreground z-50'
             arial-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         > {isMenuOpen ? <X size ={24} /> : <Menu size={24} />}
 
         </button>
 
-       <ThemeToggle></ThemeToggle>  
 
   
 
