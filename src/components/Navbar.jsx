@@ -29,9 +29,13 @@ const Navbar = () => {
 
   return (
     <nav className={cn(
-        "fixed inset-0 w-full z-40 transition-all duration-300", 
-        isScrolled ? "py-5 shadow-md" : "py-5 "
+        "fixed  w-full z-40 transition-all duration-300", 
+        isScrolled ? "py-5" : "py-5 "
   )}>
+    <div className={cn(
+        "fixed top-0 w-full z-0 pt-10 transition-all duration-300", 
+        isScrolled ? "py-8 bg-primary/5 backdrop-blur-sm" : "py-5 "
+  )}></div>
 
     <div className='container flex items-center justify-between'>
 
@@ -43,7 +47,7 @@ const Navbar = () => {
         </a>
 
         {/* Navigation Links */}
-        <div className='hidden md:flex space-x-8'>
+        <div className='hidden z-50 md:flex space-x-8 inset-0'>
             {navItems.map((item,key) => (
                 <a key={key} href={item.href} 
                 className='text-foreground/80 hover:text-primary transition-colors duration-300'> 

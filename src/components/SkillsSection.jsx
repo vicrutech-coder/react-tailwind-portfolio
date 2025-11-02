@@ -63,11 +63,11 @@ const SkillsSection = () => {
 
             </div>
 
-            <div className="grid grid-cols-12  sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-12 gap-4">
                 {filteredSkills.map((skill, key) => (
                     <div 
                      key={key} 
-                     className="bg-card p-6 rounded-lg shadow-xs card-hover animate-fade-in-delay-2">
+                     className="bg-card col-span-12 md:col-span-6 p-6 rounded-lg shadow-xs card-hover animate-fade-in-delay-2">
                         <div className="text-left mb-4">
                             <h3 className="font-semibold text-lg">
                                 {skill.name}  

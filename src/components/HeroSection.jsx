@@ -28,12 +28,16 @@ const HeroSection = () => {
         </div>
 
         <div>
-          <div className="absolute bottom-8 left-1/2 transform-translate-x-1/2 flex flex-col items-center animate-bounce">
-          <span className='text-sm text-muted-foreground mb-2'>Scroll</span>
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+          <span className='text-sm text-muted-foreground mb-2'>Scroll </span>
+          <a href="#about" className='p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors'>
           <ArrowDownCircleIcon className="w-10 h-10 text-primary"/>
+          </a>
 
           </div>
+
         </div>
+         
 
     </section>
   )
