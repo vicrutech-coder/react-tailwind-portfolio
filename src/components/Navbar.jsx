@@ -2,6 +2,7 @@ import React, { use, useEffect } from 'react'
 import { useState } from 'react'
 import {cn} from '../lib/utils'
 import { Menu ,X  } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
 
 const navItems = [
     { name: 'Home', href: '#hero' },
@@ -43,7 +44,8 @@ const Navbar = () => {
         {/* Navigation Links */}
         <div className='hidden md:flex space-x-8'>
             {navItems.map((item,key) => (
-                <a key={key} href={item.href} className='text-foreground/80 hover:text-primary transition-colors duration-300'> {item.name} </a>
+                <a key={key} href={item.href} 
+                className='text-foreground/80 hover:text-primary transition-colors duration-300'> {item.name} </a>
             ))}
         </div>
 
@@ -51,11 +53,16 @@ const Navbar = () => {
 
         <button
             onClick={() => setIsMenuOpen((prev) => !prev)}
-            className='md:hidden p-2 text-foreground z-50'
+            className='md:hidden pt-2 pr-10  text-foreground z-50'
             arial-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         > {isMenuOpen ? <X size ={24} /> : <Menu size={24} />}
 
         </button>
+
+       <ThemeToggle></ThemeToggle>  
+
+  
+
         <div className={cn("fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
             "transition-all duration-300 md:hidden",
 

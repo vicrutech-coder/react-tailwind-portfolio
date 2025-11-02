@@ -133,8 +133,8 @@ const ContactSection = () => {
                                 <label htmlFor="message" className='block text-sm font-medium mb-2'>Deine Nachrichten</label>
                                 <textarea 
                                
-                                id='name'
-                                name='name'
+                                id='message'
+                                name='message'
                                 required
                                 className='w-full px-4 pz-3 rounded-md border border-input bg-background focus:outline-hidden resize-none'
                                 placeholder='Hallo, ich möchte mit Ihnen in Kontakt treten...'
